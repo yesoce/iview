@@ -132,7 +132,6 @@
         directives: { clickOutside: vClickOutside.directive, TransferDom },
         props: {
             value: {
-                type: [String, Number, Array],
                 default: ''
             },
             // 使用时，也得设置 value 才行
