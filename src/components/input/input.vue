@@ -312,7 +312,7 @@
                 this.$emit('input', '');
                 this.setCurrentValue('');
                 this.$emit('on-change', e);
-                this.$emit('on-clear');
+                this.$emit('on-clear', e);
             },
             handleSearch () {
                 if (this.disabled) return false;
