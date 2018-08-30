@@ -1,6 +1,6 @@
 {
-    "name": "iview",
-    "version": "3.0.0",
+    "name": "@ewei/iview",
+    "version": "3.0.0-r4",
     "title": "iView",
     "description": "A high quality UI components Library with Vue.js",
     "homepage": "http://www.iviewui.com",
