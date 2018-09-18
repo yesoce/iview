@@ -38,6 +38,10 @@
                     return oneOf(value, ['on', 'off']);
                 },
                 default: 'off'
+            },
+            validateAfterRuleChanged: {
+                type: Boolean,
+                default: false
             }
         },
         provide() {
@@ -94,7 +98,9 @@
         },
         watch: {
             rules() {
-                this.validate();
+                if (this.validateAfterRuleChanged) {
+                    this.validate();
+                }
             }
         },
         created () {
