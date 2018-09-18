@@ -259,7 +259,7 @@
             // set the initial values if there are any
             if (!this.remote && this.selectOptions.length > 0){
                 this.values = this.getInitialValue().map(value => {
-                    if (typeof value !== 'number' && !value) return null;
+                    if (typeof value !== 'number' && value == null) return null;
                     return this.getOptionData(value);
                 }).filter(Boolean);
             }
@@ -456,11 +456,14 @@
                 const {multiple, remote, value} = this;
                 let initialValue = Array.isArray(value) ? value : [value];
                 if (!multiple && (typeof initialValue[0] === 'undefined' || (String(initialValue[0]).trim() === '' && !Number.isFinite(initialValue[0])))) initialValue = [];
-                if (remote && !multiple && value) {
+                if (remote && !multiple && value != null) {
                     const data = this.getOptionData(value);
                     this.query = data ? data.label : String(value);
                 }
                 return initialValue.filter((item) => {
+                    if (typeof item === 'boolean') {
+                        return item;
+                    }
                     return Boolean(item) || item === 0;
                 });
             },
