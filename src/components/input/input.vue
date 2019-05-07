@@ -22,6 +22,9 @@
                 :value="currentValue"
                 :number="number"
                 :autofocus="autofocus"
+                :min="min"
+                :max="max"
+                :step="step"
                 @keyup.enter="handleEnter"
                 @keyup="handleKeyup"
                 @keypress="handleKeypress"
@@ -119,6 +122,15 @@
             autofocus: {
                 type: Boolean,
                 default: false
+            },
+            min: {
+                type: [Number, String]
+            },
+            max: {
+                type: [Number, String]
+            },
+            step: {
+                type: [Number, String]
             },
             spellcheck: {
                 type: Boolean,
