@@ -24,6 +24,9 @@
                 :value="currentValue"
                 :number="number"
                 :autofocus="autofocus"
+                :min="min"
+                :max="max"
+                :step="step"
                 @keyup.enter="handleEnter"
                 @keyup="handleKeyup"
                 @keypress="handleKeypress"
@@ -174,6 +177,15 @@
             enterButton: {
                 type: [Boolean, String],
                 default: false
+            },
+            min: {
+                type: [Number, String]
+            },
+            max: {
+                type: [Number, String]
+            },
+            step: {
+                type: [Number, String]
             }
         },
         data () {
